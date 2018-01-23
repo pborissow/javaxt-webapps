@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>Sprite Manager</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+<script type="text/javascript" src="javaxt/Window.js"></script>
+<script type="text/javascript" src="SpriteManager.js"></script>
+
+<style>
+
+    html, body {
+        height:100%;
+        margin:0;
+    }
+    
+
+    body, textarea, input, select, td, th {
+        font-family:helvetica,arial,verdana,sans-serif; font-size:14px;
+    }    
+
+    h1 {
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-size:18px;
+        font-weight: normal;
+        margin: 20px 0 5px 0;
+    }
+    
+    p {
+        margin: 5px 0 15px 0;
+        color: #555555;
+    }
+    
+    
+    a, a:visited {color: #3366CC; cursor: pointer; }
+    a:hover {color:#FF3300;}
+    
+    
+    #sprite-manager {
+        padding: 20px;
+    }
+
+    
+    #drop_zone {
+        border: 2px dashed #bbb;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 25px;
+        text-align: center;
+        font-size: 20pt;
+        font-weight: bold;
+        color: #bbb;
+    }
+    
+    .thumb {
+        height: 75px;
+        border: 1px solid #000;
+        margin: 10px 5px 0 0;
+    }    
+    
+    
+    
+    .form-button {
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+
+        color: #363636;
+        display: inline-block;
+        font-size: 14px;
+        height: 28px;
+        width: 85px;
+        vertical-align: middle;
+        background-color: #e4e4e4;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 0px rgb(255, 255, 255);
+        cursor: pointer;
+        margin-left: 10px; /* Assumes that the buttons are aligned to the right */
+
+    }
+
+    .form-button:active {
+        box-shadow: none;
+    }
+
+    .form-button:hover { /* Same as form input */
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        outline: 0 none;
+    }
+
+    .form-button:focus { /* Same as form input */
+        border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+        outline: 0 none;
+    }
+    
+    
+</style>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+    
+var spriteManager;    
+    
+window.onload = function() {
+
+    var body = document.getElementById("sprite-manager");
+    spriteManager = new javaxt.dhtml.SpriteManager(body);
+    
+};
+
+//]]>
+</script>
+
+
+</head>
+<body>
+       
+
+
+<div id="sprite-manager">
+    
+<h1>Sprite Manager</h1>
+<p>
+    Drag and drop images from your computer onto the drop area. Your images will  
+    be organized by image size. Once your images have been uploaded, you can click on a group 
+    header to generate an image sprite. You can also import an existing sprite by clicking <a onclick="spriteManager.importSprite();">here</a>.
+    
+</p>    
+    
+    
+    <div id="drop_zone">Drop files here</div>
+    <div id="list"></div>
+</div>
+
+</body>
+</html>
